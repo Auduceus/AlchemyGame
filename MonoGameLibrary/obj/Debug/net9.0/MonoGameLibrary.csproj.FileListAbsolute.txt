@@ -1,0 +1,13 @@
+D:\Code\AlchemyGame\MonoGameLibrary\bin\Debug\net9.0\MonoGameLibrary.deps.json
+D:\Code\AlchemyGame\MonoGameLibrary\bin\Debug\net9.0\MonoGameLibrary.dll
+D:\Code\AlchemyGame\MonoGameLibrary\bin\Debug\net9.0\MonoGameLibrary.pdb
+D:\Code\AlchemyGame\MonoGameLibrary\obj\Debug\net9.0\MonoGameLibrary.csproj.AssemblyReference.cache
+D:\Code\AlchemyGame\MonoGameLibrary\obj\Debug\net9.0\MonoGameLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\AlchemyGame\MonoGameLibrary\obj\Debug\net9.0\MonoGameLibrary.AssemblyInfoInputs.cache
+D:\Code\AlchemyGame\MonoGameLibrary\obj\Debug\net9.0\MonoGameLibrary.AssemblyInfo.cs
+D:\Code\AlchemyGame\MonoGameLibrary\obj\Debug\net9.0\MonoGameLibrary.csproj.CoreCompileInputs.cache
+D:\Code\AlchemyGame\MonoGameLibrary\obj\Debug\net9.0\MonoGameLibrary.sourcelink.json
+D:\Code\AlchemyGame\MonoGameLibrary\obj\Debug\net9.0\MonoGameLibrary.dll
+D:\Code\AlchemyGame\MonoGameLibrary\obj\Debug\net9.0\refint\MonoGameLibrary.dll
+D:\Code\AlchemyGame\MonoGameLibrary\obj\Debug\net9.0\MonoGameLibrary.pdb
+D:\Code\AlchemyGame\MonoGameLibrary\obj\Debug\net9.0\ref\MonoGameLibrary.dll
