@@ -78,6 +78,17 @@ public class TextureAtlas
     }
 
     /// <summary>
+    /// Creates a new sprite using the region from this texture atlas with the specified name.
+    /// </summary>
+    /// <param name="regionName">The name of the region to create the sprite with.</param>
+    /// <returns>A new Sprite using the texture region with the specified name.</returns>
+    public Sprite CreateSprite(string regionName)
+    {
+        TextureRegion region = GetRegion(regionName);
+        return new Sprite(region);
+    } 
+
+    /// <summary>
     /// Creates a new texture atlas based on a texture atlas xml config file
     /// </summary>
     /// <param name="content">The content manager used to load the texture for the atlas.</param>

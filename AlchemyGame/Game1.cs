@@ -13,10 +13,10 @@ public class Game1 : Core
     // private Texture2D _fih;
 
     // texture region that defines the slime sprite in the atlas.
-    private TextureRegion _slime;
+    private Sprite _slime;
 
     // texture region that defines the bat sprite in the atlas.
-    private TextureRegion _bat;
+    private Sprite _bat;
     
     public Game1() : base("Alchemy Game", 1280, 720, false)
     {
@@ -36,15 +36,18 @@ public class Game1 : Core
         // Loads the fih texture
         // _fih = Content.Load<Texture2D>("images/fih");
         // ^ all the fih stuff is inefficient and CRINGE
+        // fret not. He's been shot to death.
 
         // Create the texture atlas from XML configuration file
         TextureAtlas atlas = TextureAtlas.FromFile(Content, "images/atlas-definition.xml");
 
         // retrieve the slime region from the atlas.
-        _slime = atlas.GetRegion("slime");
+        _slime = atlas.CreateSprite("slime");
+        _slime.Scale = new Vector2(4.0f, 4.0f);
 
         // retrieve the bat region from the atlas.
-        _bat = atlas.GetRegion("bat");
+        _bat = atlas.CreateSprite("bat");
+        _bat.Scale = new Vector2(4.0f, 4.0f);
         // base.LoadContent();
     }
 
@@ -68,43 +71,14 @@ public class Game1 : Core
         // Begin sprite batch to prep for rendering. SamplerState.PointClamp keeps scaled pixel art sharp, apparently.
         SpriteBatch.Begin(samplerState: SamplerState.PointClamp);
 
-        // Draw the slime texture region at a scale of 4.0
-        _slime.Draw(SpriteBatch, Vector2.Zero, Color.White, 0.0f, Vector2.One, 4.0f, SpriteEffects.None, 0.0f);
+        // Draw the slime sprite
+        _slime.Draw(SpriteBatch, Vector2.Zero);
 
-        // Draw the bat texture region 10px to the right of the slime at a scale of 4.0
-        _bat.Draw(SpriteBatch, new Vector2(_slime.Width * 4.0f + 10, 0), Color.White, 0.0f, Vector2.One, 4.0f, SpriteEffects.None, 1.0f);
-
-        // Always end sprite batch when finished
-        SpriteBatch.End();
-
-        /*
-        // basic sprite rendering with fih. Might not ever reuse, probably safe to delete, but has useful notes.
-        // Begin sprite batch to prep for rendering.
-        SpriteBatch.Begin();
-
-        // Draw fih texture, and place it in center coords by dividing window's dimensions in half
-        SpriteBatch.Draw(
-            _fih,                           // texture
-            new Vector2(                    // position at center of screen
-                Window.ClientBounds.Width,
-                Window.ClientBounds.Height) * 0.5f,
-                null,                       // sourceRectangle. Useful for rendering portions of a texture    
-                Color.White,                // color. Color.White renders the texture with no tint. Multiplying alters transparency
-                0.0f,                     // rotation
-                // MathHelper.ToRadians(90),   // rotate fih 90 degrees. Rotation is done in radians, so this converts 90 deg to radians
-                new Vector2(                // origin, but set to the center of the sprite instead of top left
-                    _fih.Width,
-                    _fih.Height) * 0.5f,           
-                0.5f,                       // scale, but halved since fih is too damn big
-                // new Vector2(1.5f, 0.5f)    // scale applied to x and y axes independently
-                SpriteEffects.None,         // effects
-                0.0f                        // LayerDepth. Need to change sortMode in SpriteBatch.Begin() to either FrontToBack or BackToFront
-
-        );
+        // Draw the bat sprite 10px to the right of the slime
+        _bat.Draw(SpriteBatch, new Vector2(_slime.Width + 10, 0));
 
         // Always end sprite batch when finished
         SpriteBatch.End();
-        */
 
         base.Draw(gameTime);
     }

@@ -1,3 +1,4 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"D:/Code/AlchemyGame/AlchemyGame/Content/images/atlas-definition.xml","D:\Code\AlchemyGame\AlchemyGame\Content\bin\DesktopGL\Content\images/atlas-definition.xml","CopyItem","File",279,279,0.0016514
 "D:/Code/AlchemyGame/AlchemyGame/Content/images/atlas.png","D:/Code/AlchemyGame/AlchemyGame/Content/bin/DesktopGL/Content/images/atlas.xnb","TextureProcessor","Texture2DContent",590,16469,0.19862
 "D:/Code/AlchemyGame/AlchemyGame/Content/images/fih.png","D:/Code/AlchemyGame/AlchemyGame/Content/bin/DesktopGL/Content/images/fih.xnb","TextureProcessor","Texture2DContent",539255,3251797,0.2863316

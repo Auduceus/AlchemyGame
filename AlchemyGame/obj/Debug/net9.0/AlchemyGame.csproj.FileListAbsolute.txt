@@ -36,3 +36,4 @@ D:\Code\AlchemyGame\AlchemyGame\bin\Debug\net9.0\MonoGameLibrary.dll
 D:\Code\AlchemyGame\AlchemyGame\bin\Debug\net9.0\MonoGameLibrary.pdb
 D:\Code\AlchemyGame\AlchemyGame\bin\Debug\net9.0\Content\images\fih.xnb
 D:\Code\AlchemyGame\AlchemyGame\bin\Debug\net9.0\Content\images\atlas.xnb
+D:\Code\AlchemyGame\AlchemyGame\bin\Debug\net9.0\Content\images\atlas-definition.xml
