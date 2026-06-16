@@ -13,10 +13,16 @@ public class Game1 : Core
     // private Texture2D _fih;
 
     // texture region that defines the slime sprite in the atlas.
-    private Sprite _slime;
+    //private Sprite _slime;
+
+    // Defines the slime animated sprite
+    private AnimatedSprite _slime;
 
     // texture region that defines the bat sprite in the atlas.
-    private Sprite _bat;
+    //private Sprite _bat;
+
+    // Defines the bat animated sprite
+    private AnimatedSprite _bat;
     
     public Game1() : base("Alchemy Game", 1280, 720, false)
     {
@@ -42,11 +48,12 @@ public class Game1 : Core
         TextureAtlas atlas = TextureAtlas.FromFile(Content, "images/atlas-definition.xml");
 
         // retrieve the slime region from the atlas.
-        _slime = atlas.CreateSprite("slime");
+        _slime = atlas.CreateAnimatedSprite("slime-animation");
         _slime.Scale = new Vector2(4.0f, 4.0f);
 
         // retrieve the bat region from the atlas.
-        _bat = atlas.CreateSprite("bat");
+        // _bat = atlas.CreateSprite("bat");
+        _bat = atlas.CreateAnimatedSprite("bat-animation");
         _bat.Scale = new Vector2(4.0f, 4.0f);
         // base.LoadContent();
     }
@@ -57,6 +64,12 @@ public class Game1 : Core
             Exit();
 
         // TODO: Add update logic here
+
+        // Update the slime animated sprite.
+        _slime.Update(gameTime);
+
+        // Update the bat animated sprite.
+        _bat.Update(gameTime);
 
         base.Update(gameTime);
     }
@@ -72,10 +85,12 @@ public class Game1 : Core
         SpriteBatch.Begin(samplerState: SamplerState.PointClamp);
 
         // Draw the slime sprite
-        _slime.Draw(SpriteBatch, Vector2.Zero);
+        // _slime.Draw(SpriteBatch, Vector2.Zero);
+        _slime.Draw(SpriteBatch, new Vector2(Window.ClientBounds.Width -100, Window.ClientBounds.Height) * 0.5f);
 
         // Draw the bat sprite 10px to the right of the slime
-        _bat.Draw(SpriteBatch, new Vector2(_slime.Width + 10, 0));
+        // _bat.Draw(SpriteBatch, new Vector2(_slime.Width + 10, 0));
+        _bat.Draw(SpriteBatch, new Vector2(Window.ClientBounds.Width + 100, Window.ClientBounds.Height) * 0.5f);
 
         // Always end sprite batch when finished
         SpriteBatch.End();
