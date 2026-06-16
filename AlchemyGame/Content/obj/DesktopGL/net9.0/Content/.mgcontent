@@ -4,9 +4,11 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>D:/Code/AlchemyGame/AlchemyGame/Content/images/atlas.png</File>
     <File>D:/Code/AlchemyGame/AlchemyGame/Content/images/fih.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

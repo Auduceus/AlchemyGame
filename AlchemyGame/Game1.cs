@@ -3,13 +3,20 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoGameLibrary;
+using MonoGameLibrary.Graphics;
 
 namespace AlchemyGame;
 
 public class Game1 : Core
 {
     // fih texture
-    private Texture2D _fih;
+    // private Texture2D _fih;
+
+    // texture region that defines the slime sprite in the atlas.
+    private TextureRegion _slime;
+
+    // texture region that defines the bat sprite in the atlas.
+    private TextureRegion _bat;
     
     public Game1() : base("Alchemy Game", 1280, 720, false)
     {
@@ -27,9 +34,18 @@ public class Game1 : Core
     {
         // TODO: use this.Content to load game content here
         // Loads the fih texture
-        _fih = Content.Load<Texture2D>("images/fih");
+        // _fih = Content.Load<Texture2D>("images/fih");
+        // ^ all the fih stuff is inefficient and CRINGE
 
-        base.LoadContent();
+        // Create the texture atlas from XML configuration file
+        TextureAtlas atlas = TextureAtlas.FromFile(Content, "images/atlas-definition.xml");
+
+        // retrieve the slime region from the atlas.
+        _slime = atlas.GetRegion("slime");
+
+        // retrieve the bat region from the atlas.
+        _bat = atlas.GetRegion("bat");
+        // base.LoadContent();
     }
 
     protected override void Update(GameTime gameTime)
@@ -44,10 +60,25 @@ public class Game1 : Core
 
     protected override void Draw(GameTime gameTime)
     {
+        // Clear the back buffer.
         GraphicsDevice.Clear(Color.Orchid);
 
         // TODO: Add drawing code here
 
+        // Begin sprite batch to prep for rendering. SamplerState.PointClamp keeps scaled pixel art sharp, apparently.
+        SpriteBatch.Begin(samplerState: SamplerState.PointClamp);
+
+        // Draw the slime texture region at a scale of 4.0
+        _slime.Draw(SpriteBatch, Vector2.Zero, Color.White, 0.0f, Vector2.One, 4.0f, SpriteEffects.None, 0.0f);
+
+        // Draw the bat texture region 10px to the right of the slime at a scale of 4.0
+        _bat.Draw(SpriteBatch, new Vector2(_slime.Width * 4.0f + 10, 0), Color.White, 0.0f, Vector2.One, 4.0f, SpriteEffects.None, 1.0f);
+
+        // Always end sprite batch when finished
+        SpriteBatch.End();
+
+        /*
+        // basic sprite rendering with fih. Might not ever reuse, probably safe to delete, but has useful notes.
         // Begin sprite batch to prep for rendering.
         SpriteBatch.Begin();
 
@@ -73,6 +104,7 @@ public class Game1 : Core
 
         // Always end sprite batch when finished
         SpriteBatch.End();
+        */
 
         base.Draw(gameTime);
     }

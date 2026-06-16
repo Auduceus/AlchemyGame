@@ -35,3 +35,4 @@ D:\Code\AlchemyGame\AlchemyGame\obj\Debug\net9.0\ref\AlchemyGame.dll
 D:\Code\AlchemyGame\AlchemyGame\bin\Debug\net9.0\MonoGameLibrary.dll
 D:\Code\AlchemyGame\AlchemyGame\bin\Debug\net9.0\MonoGameLibrary.pdb
 D:\Code\AlchemyGame\AlchemyGame\bin\Debug\net9.0\Content\images\fih.xnb
+D:\Code\AlchemyGame\AlchemyGame\bin\Debug\net9.0\Content\images\atlas.xnb
